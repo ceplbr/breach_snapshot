@@ -1,0 +1,12 @@
+[Unit]
+Description=Breach AMCL and move_base starter
+
+[Service]
+Type=single
+ExecStart=/home/breach/catkin_ws/src/breach/scripts/breachamclservice.sh
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

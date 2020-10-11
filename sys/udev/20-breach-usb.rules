@@ -1,0 +1,3 @@
+ACTION=="add", SUBSYSTEM=="input", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c219", KERNEL=="js*", SYMLINK+="usbJoy%n"
+ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{serial}=="BR_LIDAR_01", SYMLINK+="usbLidar"
+ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{serial}=="BR_CONTROL_01", SYMLINK+="usbSTM"

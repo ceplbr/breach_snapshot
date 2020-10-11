@@ -1,0 +1,13 @@
+robot_name: Breach15
+robot_ip: 192.168.1.15
+robot_version: Full
+ultrasonic_sensors: SRF01, SRF02, SRF03, SRF04, SRF05, SRF06, SRF07, SRF08, SRF08, SRF09, SRF10
+ir_sensors: IR01, IR02, IR03, IR04, IR05
+lidar:
+  type: rplidar
+  port: /dev/usbLidar
+bumper: bumper_front, bumper_back
+low_level: 
+  version: 2.1
+  port: /dev/usbSTM
+battery_sensors: voltage, current

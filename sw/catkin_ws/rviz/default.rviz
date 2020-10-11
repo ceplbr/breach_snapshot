@@ -1,0 +1,459 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 60
+    Name: Displays
+    Property Tree Widget:
+      Expanded: ~
+      Splitter Ratio: 0.5
+    Tree Height: 603
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: LaserScan
+  - Class: rviz_plugin_tutorials/Teleop
+    Name: Robot state plugin
+    waitDistEdit: 2.0
+    waitTimeEdit: 0.2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: false
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 20
+      Reference Frame: <Fixed Frame>
+      Value: false
+    - Angle Tolerance: 0.1
+      Class: rviz/Odometry
+      Color: 255; 25; 0
+      Enabled: true
+      Keep: 10
+      Length: 0.3
+      Name: Odometry
+      Position Tolerance: 0.1
+      Topic: /odom
+      Value: true
+    - Alpha: 0.7
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /map
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_1
+      Queue Size: 100
+      Topic: /srf08_1
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_2
+      Queue Size: 100
+      Topic: /srf08_2
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_3
+      Queue Size: 100
+      Topic: /srf08_3
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_4
+      Queue Size: 100
+      Topic: /srf08_4
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_5
+      Queue Size: 100
+      Topic: /srf08_5
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_6
+      Queue Size: 100
+      Topic: /srf08_6
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_7
+      Queue Size: 100
+      Topic: /srf08_7
+      Value: true
+    - Alpha: 0.5
+      Buffer Length: 1
+      Class: rviz/Range
+      Color: 255; 255; 255
+      Enabled: true
+      Name: srf08_8
+      Queue Size: 100
+      Topic: /srf08_8
+      Value: true
+    - Alpha: 0.7
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: local costmap
+      Topic: /move_base/local_costmap/costmap
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz/Path
+      Color: 25; 255; 0
+      Enabled: true
+      Line Style: Lines
+      Line Width: 0.03
+      Name: global Path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Topic: /move_base/DWAPlannerROS/global_plan
+      Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Topic: /move_base/local_costmap/obstacle_layer_footprint/footprint_stamped
+      Value: true
+    - Alpha: 1
+      Class: rviz/Polygon
+      Color: 25; 255; 0
+      Enabled: true
+      Name: Polygon
+      Topic: /move_base/local_costmap/obstacle_layer_footprint/footprint_stamped
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /thermo_camera_image
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Thermo cam
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Value: true
+    - Class: rviz/InteractiveMarkers
+      Enable Transparency: true
+      Enabled: true
+      Name: InteractiveMarkers
+      Show Axes: false
+      Show Descriptions: true
+      Show Visual Aids: false
+      Update Topic: /menu/update
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /usb_cam_panorama/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Panorama cam
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Value: true
+    - Alpha: 1
+      Class: rviz_plugin_tutorials/Imu
+      Color: 204; 51; 204
+      Enabled: true
+      History Length: 10
+      Name: Imu
+      Topic: /test_imu
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.04
+      Style: Flat Squares
+      Topic: /scan
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.1
+      Class: rviz/Pose
+      Color: 59; 122; 0
+      Enabled: true
+      Head Length: 0.1
+      Head Radius: 0.2
+      Name: goal
+      Shaft Length: 0.5
+      Shaft Radius: 0.03
+      Shape: Arrow
+      Topic: /move_base/current_goal
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /image_qrcode_0
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: QR detection 1
+      Normalize Range: true
+      Queue Size: 1
+      Transport Hint: raw
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /image_qrcode_1
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: QR detection 2
+      Normalize Range: true
+      Queue Size: 1
+      Transport Hint: raw
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: true
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        SRF08_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        SRF08_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        SRF08_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        SRF08_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        SRF08_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        SRF08_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        SRF08_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        srf08_7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tyc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_left_rear:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_right_rear:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 8.32095
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 5.90237
+        Y: 7.25333
+        Z: 0.168099
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.894797
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 4.7082
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 713
+  Hide Left Dock: false
+  Hide Right Dock: false
+  Panorama cam:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000001e40000026cfc0200000014fb0000001c0051005200200064006500740065006300740069006f006e00200031010000003f000000d10000001800fffffffb0000001c0051005200200064006500740065006300740069006f006e002000320100000116000000c10000001800fffffffb0000001c0051005200200064006500740065006300740069006f006e00200032010000013c0000011d0000000000000000fb0000001800500061006e006f00720061006d0061002000630061006d01000001dd000000ce0000001800fffffffb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001800700061006e006f00720061006d0061002000630061006d00000000de000000c00000000000000000fb0000000a0049006d006100670065010000011e0000010c0000000000000000fb0000000c00540065006c0065006f007000000001f90000013b0000000000000000fb0000000a0049006d006100670065000000020d0000009d0000000000000000fb0000000a0049006d00610067006500000001fa000000b00000000000000000fb0000000a0049006d00610067006500000001f5000000b50000000000000000fb0000000a0049006d00610067006500000001bd000000ed0000000000000000fb0000000a0049006d00610067006500000001f3000000b70000000000000000fb0000000a0049006d00610067006501000001e3000000c70000000000000000000000010000018d0000026cfc0200000008fb000000240052006f0062006f007400200073007400610074006500200070006c007500670069006e010000003f000002400000024000fffffffb000000140054006800650072006d006f002000630061006d0100000285000000260000001800fffffffb000000260072006f0062006f00740020007400610073006b007300200063006f006e00740072006f006c010000003f0000026b0000000000000000fb000000100044006900730070006c006100790073020000019f0000001e00000117000002e2fb000000100044006900730070006c0061007900730000000043000002f10000000000000000fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000002e60000011b000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000556000000e9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004690000003efc0100000002fb0000000800540069006d00650000000000000004690000021a00fffffffb0000000800540069006d00650100000000000004500000000000000000000001d90000026c00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QR detection 1:
+    collapsed: false
+  QR detection 2:
+    collapsed: false
+  Robot state plugin:
+    collapsed: false
+  Selection:
+    collapsed: false
+  Thermo cam:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1366
+  X: 0
+  Y: 30

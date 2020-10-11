@@ -1,0 +1,51 @@
+<launch>
+    <!-- Read robot config -->
+    <rosparam file="$(find breach)/config/robot_config.yaml" command="load"/>
+
+    <!-- Read robot model -->
+    <arg name="model" default="$(find breach)/urdf/breach.urdf" />
+    <arg name="gui" default="False" />
+    <param name="robot_description" textfile="$(arg model)" />
+    <param name="use_gui" value="$(arg gui)"/>
+
+    <!-- State publisher, tf -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="rate" value="10"/>
+    </node>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+        <param name="publish_frequency" value="10"/>
+    </node>
+
+    <!-- Serial and odometry -->
+    <node name="control" pkg="breach" type="serialReceive" output="screen" />
+    <node name="odom" pkg="breach" type="odometry_publisher" />
+
+    <!-- RP Lidar -->
+    <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+        <remap from="scan" to="laserscan"/>
+        <param name="serial_port"         type="string" value="/dev/usbLidar"/>
+        <param name="serial_baudrate"     type="int"    value="115200"/>
+        <param name="frame_id"            type="string" value="laserscan"/>
+        <param name="inverted"            type="bool"   value="false"/>
+        <param name="angle_compensate"    type="bool"   value="true"/>
+    </node>
+
+    <node name="laserScan_splitter" type="laserScan_splitter" pkg="breach" output="screen" />
+
+    <!-- ROSBAG -->
+    <node pkg="rosbag" type="record" name="rosbag_record"
+       args="-o bag/breach/core
+            /breach/voltage /breach/current
+            /breach/error/estop /breach/error/bumper_front
+                /breach/error/bumper_rear /breach/error/battery
+            /move_base/global_costmap/footprint /move_base/goal
+                /move_base/local_costmap/costmap
+            /move_base/local_costmap/footprint /move_base/result /move_base/status
+            /amcl_pose
+            /scan
+            /srf01 /srf02 /srf03 /srf04 /srf05 /srf06 /srf07 /srf08 /srf09 /srf10
+            /tf /tf_static /joint_states /odom
+            /map_metadata /map
+            /error /diagnostics /rosout
+            "/>
+</launch>

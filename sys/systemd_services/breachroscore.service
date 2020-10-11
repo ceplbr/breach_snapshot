@@ -1,0 +1,13 @@
+[Unit]
+Description=Breach ROS core starter
+After=NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=/home/breach/catkin_ws/src/breach/scripts/breachroscore.sh
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

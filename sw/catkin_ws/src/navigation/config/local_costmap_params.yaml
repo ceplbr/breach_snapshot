@@ -1,0 +1,33 @@
+local_costmap:
+    global_frame: map
+    robot_base_frame: base_link
+    update_frequency: 5.0
+    transform_tolerance: 0.5
+    publish_frequency: 5.0
+    static_map: false
+    rolling_window: true
+    width: 5
+    height: 5
+    resolution: 0.01
+    transform_tolerance: 0.5
+    inf_is_valid: false
+    obstacle_range: 2.5
+    raytrace_range: 3.0
+    footprint: [[0.52,-0.20],[0.50,-0.24],[-0.13, -0.24],[-0.15, -0.20],[-0.15, 0.20],[-0.13, 0.24],[0.50,0.24],[0.52,0.20]]
+    footprint_padding: 0.05
+    inflation_radius: 2.5
+    cost_scaling_factor: 30.0
+    max_obstacle_height: 0.6
+    min_obstacle_height: 0.00
+    observation_sources: laser_scan_sensor sonar1 sonar2 sonar3 sonar4 sonar5 sonar6 sonar7 sonar8 sonar9 sonar10
+    laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: /scan, marking: true, clearing: true}
+    sonar1: {sensor_frame: SRF01, data_type: LaserScan, topic: /ultrasounds/SRF01, marking: true, clearing: false}
+    sonar2: {sensor_frame: SRF02, data_type: LaserScan, topic: /ultrasounds/SRF02, marking: true, clearing: false}
+    sonar3: {sensor_frame: SRF03, data_type: LaserScan, topic: /ultrasounds/SRF03, marking: true, clearing: false}
+    sonar4: {sensor_frame: SRF04, data_type: LaserScan, topic: /ultrasounds/SRF04, marking: true, clearing: false}
+    sonar5: {sensor_frame: SRF05, data_type: LaserScan, topic: /ultrasounds/SRF05, marking: true, clearing: false}
+    sonar6: {sensor_frame: SRF06, data_type: LaserScan, topic: /ultrasounds/SRF06, marking: true, clearing: false}
+    sonar7: {sensor_frame: SRF07, data_type: LaserScan, topic: /ultrasounds/SRF07, marking: true, clearing: false}
+    sonar8: {sensor_frame: SRF08, data_type: LaserScan, topic: /ultrasounds/SRF08, marking: true, clearing: false}
+    sonar9: {sensor_frame: SRF09, data_type: LaserScan, topic: /ultrasounds/SRF09, marking: true, clearing: false}
+    sonar10: {sensor_frame: SRF10, data_type: LaserScan, topic: /ultrasounds/SRF10, marking: true, clearing: false}

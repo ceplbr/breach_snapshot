@@ -1,0 +1,14 @@
+[Unit]
+Description=Breach ROS logs handler
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -u breachhandlelogs.sh
+WorkingDirectory=/home/breach/catkin_ws/src/breach/scripts
+StandardOutput=inherit
+StandardError=inherit
+User=breach
+
+[Install]
+WantedBy=default.target

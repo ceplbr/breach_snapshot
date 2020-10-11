@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<robot name="BREACH">
+
+    <!-- ROBOT OBJECTS -->
+    <link name="base_link">
+        <axis xyz="0 0 0.5"/>
+        <origin rpy="0 0 0" />
+        <visual>
+            <geometry>
+                <box size="0.62 0.54 0.15"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0.18 0 0.0"/>
+            <material name="base">
+                <color rgba="0.88 0.93 0.059 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="laser">
+        <visual>
+            <geometry>
+                <box size="0.06 0.12 0.08"/>
+            </geometry>
+            <origin rpy="0 0 0.0" xyz="0 0 0.04"/>
+            <material name="laser">
+                <color rgba="1 0.15 0 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="camera_link">
+        <visual>
+            <geometry>
+                <box size="0.06 0.12 0.08"/>
+            </geometry>
+            <origin rpy="0 -0.3 0" xyz="0.0 0 0.04"/>
+            <material name="camera_link">
+                <color rgba="1 0.15 0 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="wheel_left_rear">
+        <visual>
+            <geometry>
+                <cylinder length="0.03" radius="0.1"/>
+            </geometry>
+            <origin rpy="1.571 0 0" xyz="0 0 0"/>
+            <material name="kola">
+                <color rgba="0 0 0 0.9"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="wheel_right_rear">
+        <visual>
+            <geometry>
+                <cylinder length="0.03" radius="0.1"/>
+            </geometry>
+            <origin rpy="1.571 0 0" xyz="0 0 0"/>
+            <material name="kola" />
+        </visual>
+    </link>
+
+    <!-- ROBOT JOINTS -->
+    <joint name="base_to_laser" type="fixed">
+        <parent link="base_link"/>
+        <child link="laser"/>
+        <origin xyz="0.435 0 0.15" rpy="0.0 0.0 0"/>
+    </joint>
+
+    <joint name="base_to_camera" type="fixed">
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+        <origin xyz="0.20 0 0.22" rpy="0 -0.3 0"/>
+    </joint>
+
+    <joint name="base_to_wheel_left_rear" type="fixed">
+        <parent link="base_link"/>
+        <child link="wheel_left_rear"/>
+        <origin xyz="0 0.27 0"/>
+    </joint>
+
+    <joint name="base_to_wheel_right_rear" type="fixed">
+        <parent link="base_link"/>
+        <child link="wheel_right_rear"/>
+        <origin xyz="0 -0.27 0"/>
+    </joint>
+
+    <!--
+    ========================================
+    |      SONAR RANGE FORMAT              |
+    ========================================   -->
+    <!-- SRF01 -->
+    <link name="srf01">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf01" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf01"/>
+        <origin xyz="-0.13 0.16 0" rpy="0 0 2.88"/>
+    </joint>
+
+    <link name="SRF01">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF01" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF01"/>
+        <origin xyz="-0.13 0.16 0" rpy="0 0 2.88"/>
+    </joint>
+
+    <!-- SRF02 -->
+    <link name="srf02">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf02" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf02"/>
+        <origin xyz="0.17 0.20 0" rpy="0 0 1.745"/>
+    </joint>
+
+    <link name="SRF02">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF02" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF02"/>
+        <origin xyz="0.17 0.20 0" rpy="0 0 1.745"/>
+    </joint>
+
+    <!-- SRF03 -->
+    <link name="srf03">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf03" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf03"/>
+        <origin xyz="0.30 0.15 0" rpy="0 0 1.57"/>
+    </joint>
+
+    <link name="SRF03">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF03" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF03"/>
+        <origin xyz="0.30 0.15 0" rpy="0 0 1.57"/>
+    </joint>
+
+    <!-- SRF04 -->
+    <link name="srf04">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf04" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf04"/>
+        <origin xyz="0.45 0.21 0" rpy="0 0 0.53"/>
+    </joint>
+
+    <link name="SRF04">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF04" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF04"/>
+        <origin xyz="0.45 0.21 0" rpy="0 0 0.53"/>
+    </joint>
+
+    <!-- SRF05 -->
+    <link name="srf05">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf05" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf05"/>
+        <origin xyz="0.46 0.0 0" rpy="0 0 0.0"/>
+    </joint>
+
+    <link name="SRF05">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF05" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF05"/>
+        <origin xyz="0.46 0.0 0" rpy="0 0 0.0"/>
+    </joint>
+
+    <!-- SRF06 -->
+    <link name="srf06">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf06" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf06"/>
+        <origin xyz="0.45 -0.21 0" rpy="0 0 -0.53"/>
+    </joint>
+
+    <link name="SRF06">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF06" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF06"/>
+        <origin xyz="0.45 -0.21 0" rpy="0 0 -0.53"/>
+    </joint>
+
+    <!-- SRF07 -->
+    <link name="srf07">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf07" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf07"/>
+        <origin xyz="0.30 -0.15 0" rpy="0 0 -1.57"/>
+    </joint>
+
+    <link name="SRF07">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF07" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF07"/>
+        <origin xyz="0.30 -0.15 0" rpy="0 0 -1.57"/>
+    </joint>
+
+    <!-- SRF08 -->
+    <link name="srf08">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf08" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf08"/>
+        <origin xyz="0.17 -0.20 0" rpy="0 0 -1.745"/>
+    </joint>
+
+    <link name="SRF08">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF08" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF08"/>
+        <origin xyz="0.17 -0.20 0" rpy="0 0 -1.745"/>
+    </joint>
+
+    <!-- SRF09 -->
+    <link name="srf09">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf09" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf09"/>
+        <origin xyz="-0.13 -0.16 0" rpy="0 0 -2.88"/>
+    </joint>
+
+    <link name="SRF09">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF09" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF09"/>
+        <origin xyz="-0.13 -0.16 0" rpy="0 0 -2.88"/>
+    </joint>
+
+    <!-- SRF10 -->
+    <link name="srf10">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic">
+            <color rgba="0 0 0.7 0.9"/>
+            </material>
+        </visual>
+    </link>
+        <joint name="base_to_srf10" type="fixed">
+        <parent link="base_link"/>
+        <child link="srf10"/>
+        <origin xyz="-0.13 0 0" rpy="0 0 3.14"/>
+    </joint>
+
+    <link name="SRF10">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <material name="ultrasonic" />
+        </visual>
+    </link>
+    <joint name="base_to_SRF10" type="fixed">
+        <parent link="base_link"/>
+        <child link="SRF10"/>
+        <origin xyz="-0.13 0 0" rpy="0 0 3.14"/>
+    </joint>
+
+</robot>
+
